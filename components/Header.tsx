@@ -63,18 +63,7 @@ export default function Header({}: Props) {
           fgColor="gray"
           bgColor="transparent"
         />
-        <MotionLink
-          href="#contact"
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 10,
-          }}
-        >
+        <MotionLink href="#contact">
           <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
             Get In Touch
           </p>

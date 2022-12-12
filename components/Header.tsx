@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 type Props = {};
-const MotionLink = motion(Link);
+
 export default function Header({}: Props) {
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
@@ -29,6 +29,7 @@ export default function Header({}: Props) {
           url="https://youtube.com"
           fgColor="gray"
           bgColor="transparent"
+          className="hover:text-[#F7AB0A]"
         />
         <SocialIcon
           url="https://www.linkedin.com/in/jim-flores-teves-328a1323a/"
@@ -62,12 +63,13 @@ export default function Header({}: Props) {
           network="email"
           fgColor="gray"
           bgColor="transparent"
+          url="/#contact"
         />
-        <MotionLink href="#contact">
+        <Link href="#contact">
           <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
             Get In Touch
           </p>
-        </MotionLink>
+        </Link>
       </motion.div>
     </header>
   );

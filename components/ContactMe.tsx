@@ -9,6 +9,7 @@ type Inputs = {
   subject: string;
   message: string;
 };
+
 type Props = {};
 function ContactMe({}: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
@@ -19,21 +20,30 @@ function ContactMe({}: Props) {
     e.preventDefault();
     const current = form.current;
     if (!current) return;
-    emailjs
-      .sendForm(
-        "service_bn3vfye",
-        "template_dqj4k4r",
-        current,
-        "F_qU0Sf32GplKhLhr"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    if (
+      current?.user_name.value &&
+      current?.user_email.value &&
+      current?.message.value
+    ) {
+      emailjs
+        .sendForm(
+          "service_bn3vfye",
+          "template_dqj4k4r",
+          current,
+          "F_qU0Sf32GplKhLhr"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        )
+        .then(() => alert("Enviado"));
+    } else {
+      return alert("Faltan datos");
+    }
   };
 
   return (
@@ -49,7 +59,7 @@ function ContactMe({}: Props) {
         <div className="space-y-10">
           <div className="flex items-center space-x-5">
             <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">+12345678</p>
+            <p className="text-2xl">+051933065147</p>
           </div>
           <div className="flex items-center space-x-5">
             <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
@@ -57,7 +67,7 @@ function ContactMe({}: Props) {
           </div>
           <div className="flex items-center space-x-5">
             <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">Puno, Peru</p>
+            <p className="text-2xl">Puno, Perú</p>
           </div>
           <form
             ref={form}

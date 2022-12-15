@@ -3,6 +3,7 @@ import About from "../components/About";
 import ContactMe from "../components/ContactMe";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import HomeButton from "../components/HomeButton";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
@@ -40,6 +41,7 @@ export default function Home() {
       <section id="contact" className="snap-start">
         <ContactMe />
       </section>
+      <HomeButton />
     </div>
   );
 }

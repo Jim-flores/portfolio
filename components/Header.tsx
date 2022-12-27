@@ -25,22 +25,42 @@ export default function Header({}: Props) {
         className="flex flex-row items-center"
       >
         {/* Social icons */}
-        <SocialIcon
-          url="https://youtube.com"
-          fgColor="gray"
-          bgColor="transparent"
-          className="hover:text-[#F7AB0A]"
-        />
-        <SocialIcon
-          url="https://www.linkedin.com/in/jim-flores-teves-328a1323a/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://github.com/Jim-flores/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          onHoverStart={(e) => {}}
+          onHoverEnd={(e) => {}}
+        >
+          <SocialIcon
+            url="https://youtube.com"
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          onHoverStart={(e) => {}}
+          onHoverEnd={(e) => {}}
+        >
+          <SocialIcon
+            url="https://www.linkedin.com/in/jim-flores-teves-328a1323a/"
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          onHoverStart={(e) => {}}
+          onHoverEnd={(e) => {}}
+        >
+          <SocialIcon
+            url="https://github.com/Jim-flores/"
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        </motion.div>
       </motion.div>
       <motion.div
         initial={{

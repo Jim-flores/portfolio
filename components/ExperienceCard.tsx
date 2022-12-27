@@ -1,11 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { DiJavascript, DiReact, DiNodejs } from "react-icons/di";
-function ExperienceCard() {
+import { DiJavascript, DiNodejs } from "react-icons/di";
+import { IoLogoVue } from "react-icons/io5";
+
+function ExperienceCard({
+  name,
+  position,
+  time,
+  description,
+  image,
+  sumary,
+  logos,
+}) {
+  var logoss = logos;
   return (
     <article
       className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
-     x-[500px] md:x-[600px] xl:w-[500px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden "
+     x-[500px] md:x-[600px] xl:w-[500px] md:w-[500px] sm:w-[310px] sm:h-[520px] snap-center bg-[#292929] p-10 xl:hover:opacity-100 xl:opacity-40 md:hover:opacity-100 md:opacity-40 sm:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden "
     >
       <motion.img
         initial={{
@@ -15,25 +26,22 @@ function ExperienceCard() {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
-        src={"/img/dev.jpg"}
+        className="w-32 h-32 rounded-full object-cover object-center"
+        src={image}
         alt=""
       />
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">CEO OF PAPAFAM</h4>
-        <p className="font-bold text-2xl mt-1">PAPAFAM</p>
-        <div className="flex space-x-2 my-2">
-          <DiJavascript className="h-10 w-10" />
-          <DiReact className="h-10 w-10" />
-          <DiNodejs className="h-10 w-10" />
-        </div>
-        <p className="uppercase py-5 text-gray-300">Started work...- ended</p>
-        <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>Sumary points</li>
-          <li>Sumary points</li>
-          <li>Sumary points</li>
-          <li>Sumary points</li>
-          <li>Sumary points</li>
+        <h4 className="uppercase xl:text-3xl md:text-3xl sm:text-xl font-light ">
+          {name}
+        </h4>
+        <p className="font-bold xl:text-xl md:text-xl sm:text-lg mt-1">
+          {position}
+        </p>
+
+        <p className="uppercase py-5 text-gray-300">{time}</p>
+        <ul className="list-disc space-y-4 ml-5 xl:text-lg md:text-lg sm:text-base text-left">
+          <li className="list-none">{description}</li>
+          <li>{sumary}</li>
         </ul>
       </div>
     </article>

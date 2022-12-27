@@ -1,9 +1,24 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FiDownload } from "react-icons/fi";
 
 type Props = {};
 
 export default function About({}: Props) {
+  const onButtonClick = () => {
+    // using Java Script method to get PDF file
+    fetch("Curriculum_Vitae.pdf").then((response) => {
+      response.blob().then((blob) => {
+        // Creating new object of PDF file
+        const fileURL = window.URL.createObjectURL(blob);
+        // Setting various property values
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.download = "Curriculum_Vitae.pdf";
+        alink.click();
+      });
+    });
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -35,12 +50,22 @@ export default function About({}: Props) {
           <span className="underline decoration-[#F7AB07]">little</span>
           {""} background
         </h4>
-        <p className="text-base">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt
-          rerum ipsa dolore ea quasi, dicta repudiandae soluta id, perferendis
-          eum nisi, culpa suscipit accusamus necessitatibus quod temporibus
-          maxime facere.
-        </p>
+        <div>
+          <p className="mb-10 text-lg">
+            I am a Full-Stack Developer from Puno, Perú. As a beginner I like to
+            test my coding knowledge copying some functionalities of
+            applications that we use daily. As you know there is no single way
+            to solve problems, that&rsquo;s why I like to learn from other
+            people, especially my coworkers.
+          </p>
+          <motion.button
+            onClick={onButtonClick}
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded flex p-1 items-center text-sm text"
+            whileTap={{ scale: 0.9 }}
+          >
+            <FiDownload className="mr-1" /> Download CV
+          </motion.button>
+        </div>
       </div>
     </motion.div>
   );

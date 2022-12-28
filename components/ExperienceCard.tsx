@@ -2,7 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { DiJavascript, DiNodejs } from "react-icons/di";
 import { IoLogoVue } from "react-icons/io5";
-
+type Props = {
+  name: string;
+  position: string;
+  time: string;
+  description: string;
+  image: string;
+  sumary: string;
+};
 function ExperienceCard({
   name,
   position,
@@ -10,9 +17,7 @@ function ExperienceCard({
   description,
   image,
   sumary,
-  logos,
-}) {
-  var logoss = logos;
+}: Props) {
   return (
     <article
       className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0

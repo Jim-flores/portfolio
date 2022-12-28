@@ -10,7 +10,7 @@ const jobs = [
     position: "Front-End Dev.",
     time: "jun. 2021 - ago. 2021",
     description: "Business Sector: Financial company",
-    logos: [{ vue: "IoLogoVue" }, { node: "DiNodejs" }],
+
     image: "/img/coopac.jpg",
     sumary:
       "I designed the interface of the company's web application using vue.js, bootstrap, and figma.",
@@ -21,7 +21,7 @@ const jobs = [
     position: "Software Analyst",
     time: "nov. 2021 - feb. 2022",
     description: "Business Sector: Education",
-    logos: [{ vue: "DiJavascript" }, { node: "DiJavascript" }],
+
     image: "/img/drep.jpg",
     sumary:
       "I made documentation and reporting of functional issues for state records software.",
@@ -49,7 +49,6 @@ function WorkExperience({}: Props) {
             description={job.description}
             sumary={job.sumary}
             image={job.image}
-            logos={job.logos}
           />
         ))}
       </div>

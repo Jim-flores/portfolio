@@ -60,7 +60,7 @@ export default function About({}: Props) {
           </p>
           <motion.button
             onClick={onButtonClick}
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded flex p-1 items-center text-sm text"
+            className="bg-gray-300 text-gray-800 hover:text-gray-300 hover:bg-gray-800 font-bold py-2 px-4 rounded flex p-1 items-center text-sm text  hover:shadow-white hover:shadow-sm"
             whileTap={{ scale: 0.9 }}
           >
             <FiDownload className="mr-1" /> Download CV

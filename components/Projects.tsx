@@ -18,7 +18,7 @@ function Projects({}: Props) {
           >
             <motion.img
               src="https://universidadalnus.com/wp-content/uploads/2020/01/Universidad-alnus-Importancia-del-Project-Management-SUBTITULO-1-300x300.png"
-              initial={{ y: -300, opacity: 0 }}
+              initial={{ y: -100, opacity: 0 }}
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
             />

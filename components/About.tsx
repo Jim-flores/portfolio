@@ -14,7 +14,7 @@ export default function About({}: Props) {
         // Setting various property values
         let alink = document.createElement("a");
         alink.href = fileURL;
-        alink.download = "Curriculum_Vitae.pdf";
+        alink.download = "Curriculum.pdf";
         alink.click();
       });
     });
@@ -39,7 +39,7 @@ export default function About({}: Props) {
         }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        src=""
+        src={"/img/about.png"}
         alt=""
         className="-mb-20 md:mb-0 sm:mt-20 flex-shrink-0 w-52 h-52 rounded-full object-cover md:rounded-lg md:w-64 md:h-[350px] xl:w-[400px] xl:h-[500px]"
       />

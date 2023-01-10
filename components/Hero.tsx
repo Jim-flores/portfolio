@@ -17,7 +17,7 @@ export default function Hero({}: Props) {
       <BackgroundCircles />
       <Image
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src={"/img/dev.jpg"}
+        src={"/img/perfil.jpeg"}
         alt=""
         width={100}
         height={100}

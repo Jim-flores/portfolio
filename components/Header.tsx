@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
+import { TfiWorld } from "react-icons/tfi";
 type Props = {};
 
 export default function Header({}: Props) {
+  const [change, setChange] = useState(true);
+  const buttonHandler = () => {
+    setChange((current) => !current);
+  };
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -30,12 +34,22 @@ export default function Header({}: Props) {
           whileTap={{ scale: 0.9 }}
           onHoverStart={(e) => {}}
           onHoverEnd={(e) => {}}
+          className="flex"
+          onClick={buttonHandler}
         >
-          <SocialIcon
+          {/* <SocialIcon
             url="https://youtube.com"
             fgColor="gray"
             bgColor="transparent"
-          />
+          /> */}
+          <TfiWorld className="text-[#808080] h-6 w-6" />
+          <div className="flex absolute h-6 w-6 justify-end ml-1 mt-2">
+            {change ? (
+              <p className="text-[#ddd5d5]">🇺🇸</p>
+            ) : (
+              <p className="text-[#ddd5d5]">🇪s</p>
+            )}
+          </div>
         </motion.div>
         <motion.div
           whileHover={{ scale: 1.2 }}
